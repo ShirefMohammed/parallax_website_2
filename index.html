@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Parallax Website</title>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- font Awesome CDN Files -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- css normalize -->
+    <link rel="stylesheet" href="./css/normalize.css">
+
+    <!-- css styles -->
+    <link rel="stylesheet" href="./css/master.css">
+
+</head>
+
+<body>
+    <section class="home">
+        <header class="header">
+            <div class="container">
+                <div class="content">
+                    <div class="logo">
+                        <span>Travel</span>
+                        <i class="fa-solid fa-bars bars"></i>
+                    </div>
+                    <ul class="links handle-links">
+                        <li><a href="" class="active">Home</a><i class="fa-solid fa-xmark x-mark"></i></li>
+                        <li><a href="">About Us</a></li>
+                        <li><a href="">Services</a></li>
+                        <li><a href="">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        
+        <div class="parallax">
+            <img src="./assets/stars.png" id="stars" alt="">
+            <img src="./assets/burjkhalifa.png" id="burjkhalifa" alt="">
+            <img src="./assets/building.png" id="building" alt="">
+            <img src="./assets/dubaitext.png" id="dubaitext" alt="">
+            <h2 id="text-sm">Doubi</h2>
+        </div>
+    </section>
+
+    <section class="description">
+        <div class="container">
+            <h2>Dubai - United Arab Emirates</h2>
+            <P>
+                It is a long established fact that a reader will be distracted by the readable
+                content of a page when looking at its layout. The point of using Lorem Ipsum is that it has
+                a more-or-less normal distribution of letters, as opposed to using 'Content here, content here',
+                making it look like readable English. Many desktop publishing packages and web page editors now use
+                Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites
+                still
+                It is a long established fact that a reader will be distracted by the readable
+                content of a page when looking at its layout. The point of using Lorem Ipsum is that it has
+                a more-or-less normal distribution of letters, as opposed to using 'Content here, content here',
+                making it look like readable English. Many desktop publishing packages and web page editors now use
+                Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites
+                still
+            </P>
+            <p>
+                in their infancy. Various versions have evolved over the years,
+                sometimes by accident, sometimes on purpose (injected humour and the like).
+                There are many variations of passages of Lorem Ipsum available, but the majority have suffered
+                alteration in some form,
+                by injected humour, or randomised words which don't look even slightly believable.
+                If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing
+                hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined
+                chunks
+                in their infancy. Various versions have evolved over the years,
+                sometimes by accident, sometimes on purpose (injected humour and the like).
+                There are many variations of passages of Lorem Ipsum available, but the majority have suffered
+                alteration in some form,
+                by injected humour, or randomised words which don't look even slightly believable.
+                If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing
+                hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined
+                chunks
+            </p>
+            <p>
+                as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200
+                Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks
+                reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour,
+                or non-characteristic words etc.
+                as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200
+                Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks
+                reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour,
+                or non-characteristic words etc.
+                as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200
+                Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks
+                reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour,
+                or non-characteristic words etc.
+                as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200
+                Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks
+                reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour,
+                or non-characteristic words etc.
+            </p>
+        </div>
+    </section>
+
+
+    <script>
+        /* Control Links by clicking on bars and x-mark icons*/
+        document.querySelector(".header .logo i").onclick = () => {
+            document.querySelector(".header .links").classList.toggle("handle-links");
+        }
+        document.querySelector(".header .links li:first-of-type i").onclick = () => {
+            document.querySelector(".header .links").classList.add("handle-links");
+        }
+
+        /* Handle Parallax */
+        let dubaitext = document.getElementById("dubaitext");
+        let textSm = document.getElementById("text-sm");
+        let burjkhalifa = document.getElementById("burjkhalifa");
+        let stars = document.getElementById("stars");
+
+        window.addEventListener('scroll', () => {
+            let value = window.scrollY;
+
+            dubaitext.style.left = value * -2 + 'px';
+            textSm.style.marginLeft = value * -1 + 'px';
+            burjkhalifa.style.top = value * 1 + 'px';
+            stars.style.top = value * 1 + 'px';
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,288 @@
+/* Import font family */
+@import url('https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation:wght@400;600;700&display=swap');
+
+:root {
+    --main-color: #05005e;
+    --second-color: #040228;
+    --text-color: #696969;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Edu NSW ACT Foundation', cursive;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+html {
+    font-size: 15px;
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+/* Start Home */
+.home {
+    position: relative;
+    background: linear-gradient(#040228 0%, #0075c7 40%);
+}
+
+/* End Home */
+
+/* Start Header */
+.header {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.header .content {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header .content .logo {
+    font-size: 2rem;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header .content .logo span {
+    pointer-events: none;
+    font-weight: 700;
+}
+
+.header .content .logo .bars {
+    display: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -ms-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+}
+
+.header .content .logo .bars:hover {
+    color: var(--main-color);
+}
+
+@media(max-width: 992px) {
+    .header .content .logo {
+        flex: 1;
+    }
+
+    .header .content .logo .bars {
+        display: revert;
+    }
+}
+
+.header .content .links {
+    display: flex;
+    gap: 2rem;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+    transition: .5s;
+}
+
+@media (max-width: 992px) {
+    .header .content .links {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 300px;
+        min-height: 100vh;
+        padding: 2.5rem 1rem;
+        flex-direction: column;
+        gap: 1.5rem;
+        background-color: var(--second-color);
+    }
+
+    .handle-links {
+        -webkit-transform: translateX(-100%);
+        -moz-transform: translateX(-100%);
+        -ms-transform: translateX(-100%);
+        -o-transform: translateX(-100%);
+        transform: translateX(-100%);
+    }
+}
+
+@media (max-width: 768px) {
+    .header .content .links {
+        width: 100%;
+    }
+}
+
+.header .content .links a {
+    color: white;
+    font-weight: 600;
+    padding: 6px 20px;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -ms-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+    border-radius: 1rem;
+}
+
+.header .content .links a.active,
+.header .content .links a:hover {
+    color: white;
+    background-color: var(--main-color);
+}
+
+@media (max-width: 992px) {
+
+    .header .content .links a.active,
+    .header .content .links a:hover {
+        color: var(--main-color);
+        background-color: transparent;
+    }
+}
+
+.header .content .links li:first-of-type {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@media(min-width: 992px) {
+    .header .content .links li:first-of-type .x-mark {
+        display: none;
+    }
+}
+
+.header .content .links li:first-of-type .x-mark {
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -ms-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+}
+
+.header .content .links li:first-of-type .x-mark:hover {
+    color: red;
+}
+
+/* End Header */
+
+/* Start parallax */
+.parallax {
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.parallax img {
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+}
+
+@media (min-width: 1200px) {
+    .parallax img {
+        width: 100%;
+    }
+}
+
+.parallax #text-sm {
+    position: absolute;
+    font-size: 5rem;
+    display: none;
+    font-family: cursive;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: white 3px;
+}
+
+@media (max-width: 1200px) {
+    .parallax #dubaitext {
+        display: none;
+    }
+
+    .parallax #text-sm {
+        display: revert;
+    }
+}
+
+/* End parallax */
+
+/* Start Description */
+.description {
+    padding: 100px 0;
+    margin-top: -1px;
+    background-color: var(--second-color);
+    color: white;
+}
+
+.description h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.description p {
+    line-height: 1.5rem;
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+}
+
+/* End Description */
